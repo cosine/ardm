@@ -33,8 +33,8 @@ Lets examine some of the reasons why you might move to ActiveRecord.
 
 Run your project using the ORM environment variable.
 
-    ORM=activerecord bundle exec rake spec
-    ORM=datamapper bundle exec rake spec
+    ORM=active_record bundle exec rake spec
+    ORM=data_mapper bundle exec rake spec
 
 ## Incremental migration from DataMapper to ActiveRecord
 
@@ -87,7 +87,7 @@ unique solution.
 4. Make all your tests pass in ActiveRecord and DataMapper mode. This is an
    ideal. You could decide that you're close enough and start sacrificing
    DataMapper specific code for ActiveRecord code. You can branch around
-   picky code with the `Ardme.activerecord?` and `Ardm.datamapper?` helpers.
+   picky code with the `Ardme.active_record?` and `Ardm.data_mapper?` helpers.
 
 ## Conversions
 
@@ -110,7 +110,7 @@ adapters for accessing the same data through ActiveRecord.
 If you run into code that is particularly difficult to convert, you can
 duplicate the code and write a different version for each ORM:
 
-    if Ardm.activerecord?
+    if Ardm.active_record?
       Thing.where(Thing.arel_table[:field].matches('something'))
     else
       # This is just an example. This should actually work fine in Ardm.

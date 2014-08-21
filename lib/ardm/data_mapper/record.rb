@@ -1,4 +1,4 @@
-require 'awsm/resource'
+require 'active_support'
 
 module Ardm
   module DataMapper

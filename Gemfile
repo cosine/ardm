@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'pry'
-gem 'pry-debugger'
+gem(RUBY_VERSION.sub(/\..*/, "") == "1" ? 'pry-debugger' : 'pry-byebug')
 
 group :test do
   gem 'sqlite3'
